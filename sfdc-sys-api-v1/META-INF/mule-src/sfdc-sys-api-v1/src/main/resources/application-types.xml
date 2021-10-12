@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog/>
+  <types:enrichment select="#a5cde85e-faa3-4469-b93b-67dcd572d74f"/>
+  <types:enrichment select="#a54e458e-de22-49ae-955e-490db4db170b"/>
+  <types:enrichment select="#f7ea0643-6592-4dbd-a2cd-6a3ecc4ed7b8"/>
+  <types:enrichment select="#f6a5439c-f6c8-4871-8535-a525f01654a7"/>
+  <types:enrichment select="#774aee25-4b56-4e4f-8920-7a67e906dbf2"/>
+  <types:enrichment select="#882a686e-a631-4bd8-8865-8058b010466f"/>
+  <types:enrichment select="#a6a2f2f0-fd80-41a6-a712-1abbc5604d64"/>
+  <types:enrichment select="#89726c1b-8970-4d80-aa09-911a9e068bb6"/>
+  <types:enrichment select="#1de439f7-92ec-4e2b-81eb-322b8fbc2ef7"/>
+  <types:enrichment select="#299047b1-876f-41c4-95be-5e140463dddc"/>
+  <types:enrichment select="#1f2182af-f670-4bd8-9604-dda342be9372"/>
+  <types:enrichment select="#9090f6c6-5973-40bb-a2fc-46e889d4e0c9"/>
+  <types:enrichment select="#f564b6a7-90bb-4a46-a69d-65124c1e7881"/>
+  <types:enrichment select="#b0cad756-f463-4b0b-b28e-3f6c085fa178"/>
+  <types:enrichment select="#162a5677-f917-4322-9635-5f251635c0e0"/>
+  <types:enrichment select="#0473fe14-4597-4d46-95de-6800a38828b6"/>
+  <types:enrichment select="#a9baed73-d2be-4c39-94b8-42da69d3010e"/>
+  <types:enrichment select="#5ea495e1-e11a-4595-9d7f-40c42242471d"/>
+  <types:enrichment select="#6bcd4789-e531-41ed-aedf-93e60888d180"/>
+  <types:enrichment select="#cbf5aa16-71bf-41f3-9e5b-e4ba879a01eb"/>
+  <types:enrichment select="#f6a99dc8-30c9-4b5e-8b3a-c01d43600f3b"/>
+  <types:enrichment select="#15cb49b2-faa1-4982-96cc-ad339a54b282"/>
+  <types:enrichment select="#e1510c78-aacf-4737-a373-3690addb8dc7"/>
+  <types:enrichment select="#982e5547-08d5-40cf-bc67-dc5131c75370"/>
+  <types:enrichment select="#39a6b09d-f72e-4a67-bc23-374c08dd8528"/>
+  <types:enrichment select="#fc6b3a5e-5221-4b04-86ad-089c194a4a4e"/>
+  <types:enrichment select="#12da774d-cf89-41d6-9766-332bff387ba8"/>
+</types:mule>
