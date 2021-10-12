@@ -1,0 +1,118 @@
+{
+    "customerReference": "00063120",
+    "accountReference": "00063120.00001",
+    "orderId": "1001",
+    "account": {
+        "actFlag": "N",
+        "mnpFlag": "N"
+    },
+    "subscription": {
+        "msisdn": "97665371",
+        "imsi": "454061001052111",
+        "sim": "89852069302150019624",
+        "servicePackagePlan": "3GBEX",
+        "salesPersonCode": "SA19082"
+    },
+    "paymentInfo": [
+        {
+            "payInfoName": "effDtm",
+            "payInfoValue": "2019-01-19T18:35:20.000Z"
+        },
+        {
+            "payInfoName": "payMethod",
+            "payInfoValue": "1"
+        },
+        {
+            "payInfoName": "ddBankName",
+            "payInfoValue": "ABC Bank"
+        },
+        {
+            "payInfoName": "ddBankAccountNo",
+            "payInfoValue": "799768-002"
+        },
+        {
+            "payInfoName": "ddBankCode",
+            "payInfoValue": "23"
+        },
+        {
+            "payInfoName": "ddBankBranch",
+            "payInfoValue": "101"
+        },
+        {
+            "payInfoName": "ddBankRef",
+            "payInfoValue": "C125699"
+        },
+        {
+            "payInfoName": "cardHolderName",
+            "payInfoValue": "John H Tsui"
+        },
+        {
+            "payInfoName": "debitLimit",
+            "payInfoValue": "20000"
+        }
+    ],
+    "accountDetails": [
+        {
+            "acctDetailName": "effectDtm",
+            "acctDetailValue": "2019-01-19T18:35:20.000Z"
+        },
+        {
+            "acctDetailName": "subscriberTitle",
+            "acctDetailValue": "Dr"
+        },
+        {
+            "acctDetailName": "contactPerson",
+            "acctDetailValue": "Billy Tang"
+        }
+    ],
+    "accountContact": [
+        {
+            "acctContactName": "address1",
+            "acctContactValue": "Flat C 13/F Block 20"
+        },
+        {
+            "acctContactName": "address2",
+            "acctContactValue": "Laguna City"
+        },
+        {
+            "acctContactName": "telephone",
+            "acctContactValue": "95329767"
+        },
+        {
+            "acctContactName": "fax",
+            "acctContactValue": "27351067"
+        }
+    ],
+    "subscriptionDet": [
+        {
+            "subDetName": "effectiveDate",
+            "subDetValue": "2019-01-19T18:35:20.000Z"
+        },
+        {
+            "subDetName": "salesPersonCode",
+            "subDetValue": "1005689"
+        },
+        {
+            "subDetName": "servicePackagePlan",
+            "subDetValue": "3GBEX"
+        },
+        {
+            "subDetName": "packageBundle",
+            "subDetValue": "VAS"
+        }
+    ],
+    "accountAttribute": [
+        {
+            "attrName": "userName",
+            "newValue": "Philip Chan"
+        },
+        {
+            "attrName": "correspondenceEmail",
+            "newValue": "pchan9982@yahoo.com"
+        },
+        {
+            "attrName": "billLanguage",
+            "newValue": "E"
+        }
+    ]
+}
