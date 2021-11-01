@@ -1,0 +1,58 @@
+@startuml
+/'Header and Footer Section'/
+header Template header
+footer Page %page% of %lastpage%
+title Pilot Async API Sequnce Diagram
+/'Participant Declaration '/
+Participant OrderMngt #white
+Participant OpenAM #white
+Participant ProcessAPI #white
+Participant Kafka #white
+Participant SystemAPI #white
+Participant SFDC #white
+/'ProcessAPI PATCH: Modify Account Request'/
+OrderMngt -> ProcessAPI : PATCH: /customers/accounts
+note left : "message: \n modify-account.json"
+activate OrderMngt
+activate ProcessAPI
+    alt Rate Limiting and Throttling - SLA-Based
+        ProcessAPI --> ProcessAPI : "Client is valid"
+    else error
+        ProcessAPI -> OrderMngt : "401: Unauthorized"
+    end
+    alt Rate Limiting and Throttling - SLA-Based
+        ProcessAPI --> ProcessAPI : "API calls below threshold"
+    else error
+        ProcessAPI -> OrderMngt : "429: Too Many Requests"
+    end 
+    alt Successful case
+        OrderMngt --> ProcessAPI
+        activate Kafka
+            ProcessAPI -> Kafka : "Publish"
+            Kafka -> ProcessAPI : "Response"
+        ProcessAPI -> OrderMngt : "202: Accepted"
+        deactivate Kafka
+    else error
+        ProcessAPI -> OrderMngt : "503: Service Unavailable"
+    end 
+deactivate ProcessAPI
+deactivate OrderMngt
+/'SystemAPI PATCH: Modify Account'/
+alt System API case
+SystemAPI -> Kafka: Consume message from the topic
+activate Kafka
+activate SystemAPI
+        Kafka -> SystemAPI
+        alt Transformation
+            SystemAPI --> SystemAPI : "Data mapping "
+            SystemAPI --> SystemAPI : "Convert SFDC format"
+        end
+        
+        SystemAPI -> SFDC : "Insert Billing Details to Service Cloud"
+        activate SFDC
+        SystemAPI -> SFDC : "Log the response from Sercice Cloud"
+    end 
+    deactivate SFDC
+    deactivate SystemAPI
+    deactivate Kafka
+@enduml
