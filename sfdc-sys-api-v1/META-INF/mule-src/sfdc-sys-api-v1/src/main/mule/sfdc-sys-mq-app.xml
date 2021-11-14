@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:kafka="http://www.mulesoft.org/schema/mule/kafka" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:anypoint-mq="http://www.mulesoft.org/schema/mule/anypoint-mq"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/mule/anypoint-mq/current/mule-anypoint-mq.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/kafka http://www.mulesoft.org/schema/mule/kafka/current/mule-kafka.xsd">
+	<!-- <flow name="sfdc-mq-app:\subscribe-customer-order-events:flow" doc:id="9a03556e-0c03-43f2-82e4-247de4e4a682">
+		<anypoint-mq:subscriber doc:name="Customer Order Event Subscriber" doc:id="52e43b07-49d4-4f08-8b62-aea8b1e1780c" config-ref="sonak-sfdc-amq" destination="${order.ecom.insert.queue.name}" acknowledgementTimeout="${secure::mq.ack.timeout}">
+			<reconnect frequency="${secure::mq.reconnection.frequency}" count="${secure::mq.reconnection.attempts}" />
+			<anypoint-mq:subscriber-type >
+				<anypoint-mq:prefetch maxLocalMessages="${secure::mq.max.local.message}" />
+			</anypoint-mq:subscriber-type>
+		</anypoint-mq:subscriber>
+		<flow-ref doc:name="impl-common:\initialize-common-variables" doc:id="7eaedfb4-f63a-4c42-baa8-5606032f9033" name="impl-common:\initialize-common-variables"/>
+		<flow-ref doc:name="impl-order:\transform-customer-account-data:flow" doc:id="09361570-8240-46de-a481-f202574c52fb" name="impl-customers:\transform-customer-order-data:flow"/>
+	</flow> -->
+
+
+	<!--  <flow name="sfdc-mq-app:\subscribe-customer-events:flow" doc:id="7770a311-4d98-48ba-be89-c68c1a19f51f">
+		<anypoint-mq:subscriber doc:name="Customer Event Subscriber" doc:id="b79252f5-291a-4e96-b9a7-cb1ebb51b1a0" config-ref="sonak-sfdc-amq" destination="${customer.ecom.upsert.queue.name}" acknowledgementTimeout="${secure::mq.ack.timeout}">
+			<reconnect frequency="${secure::mq.reconnection.frequency}" count="${secure::mq.reconnection.attempts}" />
+			<anypoint-mq:subscriber-type >
+				<anypoint-mq:prefetch maxLocalMessages="${secure::mq.max.local.message}" />
+			</anypoint-mq:subscriber-type>
+		</anypoint-mq:subscriber>
+		<flow-ref doc:name="impl-common:\initialize-common-variables" doc:id="743c3460-2703-4e4e-82d4-58bc1f5344d5" name="impl-common:\initialize-common-variables"/>
+		<flow-ref doc:name="impl-customers:\transform-customer-account-data:flow" doc:id="54c0a8a9-fbe8-4b61-9c8b-6d19f9e72630" name="impl-customers:\transform-customer-account-data:flow"/>
+	</flow> -->
+		<!--  <flow name="sfdc-mq-app:\subscribe-merge-customer-account:flow" doc:id="1682758f-51c4-464e-9a9d-e2ed3691e0db">
+		<anypoint-mq:subscriber doc:name="Account Merger Subscriber" doc:id="2966efe9-07e0-459b-82b4-a61774be9467" config-ref="sonak-sfdc-amq" destination="${customer.sfdc.account.merge.queue.name}" acknowledgementTimeout="${secure::mq.ack.timeout}">
+			<reconnect frequency="${secure::mq.reconnection.frequency}" count="${secure::mq.reconnection.attempts}" />
+			<anypoint-mq:subscriber-type >
+				<anypoint-mq:prefetch maxLocalMessages="${secure::mq.max.local.message}" />
+			</anypoint-mq:subscriber-type>
+		</anypoint-mq:subscriber>
+		<flow-ref doc:name="impl-common:\initialize-common-variables" doc:id="49987ec1-8135-4bbb-968d-4c5d0847fd06" name="impl-common:\initialize-common-variables"/>
+		<flow-ref doc:name="impl-customers:\merge-customer-data:flow" doc:id="9d5a80cb-297b-44a4-8206-dd344ba8da50" name="impl-customers:\merge-customer-data:flow"/>
+	</flow> -->
+	<!--  		<flow name="sfdc-mq-app:\subscribe-upsert-customer-account:flow" doc:id="969f25bb-c25b-427f-ba4b-44ef78a8508f">
+		<anypoint-mq:subscriber doc:name="Account Upsert Subscriber" doc:id="0f8485a4-2e5c-43e1-8542-3a0d087ac6d5" config-ref="sonak-sfdc-amq" destination="${customer.sfdc.account.upsert.queue.name}" acknowledgementTimeout="${secure::mq.ack.timeout}">
+			<reconnect frequency="${secure::mq.reconnection.frequency}" count="${secure::mq.reconnection.attempts}" />
+			<anypoint-mq:subscriber-type >
+				<anypoint-mq:prefetch maxLocalMessages="${secure::mq.max.local.message}" />
+			</anypoint-mq:subscriber-type>
+		</anypoint-mq:subscriber>
+		<flow-ref doc:name="impl-common:\initialize-common-variables" doc:id="d4e648d2-632b-459c-a8f6-de68e1de9089" name="impl-common:\initialize-common-variables"/>
+		<flow-ref doc:name="impl-customers:\upsert-customer-account:flow" doc:id="70a31ceb-51cc-4b38-b82c-50ef3f799ce3" name="impl-customers:\upsert-customer-account:flow"/>
+	</flow> -->
+			<flow name="sfdc-mq-app:\subscribe-insert-order:flow" doc:id="56485a0d-89bd-4feb-b867-f80d408655d5">
+		<kafka:message-listener doc:name="consume-billing-orderrequest:flow" doc:id="87e7b12f-4a6f-4e8d-b86e-2b5dda20a6f7" config-ref="Apache_Kafka_Consumer_configuration"/>
+		<flow-ref doc:name="impl-common:\initialize-common-variables" doc:id="922b70eb-e9c9-481b-b832-1d80e7f85d7c" name="impl-common:\initialize-common-variables"/>
+		<flow-ref doc:name="impl-customers:\impl-customers:\insert-billing-order:flow" doc:id="4882b3be-cd61-40ce-a60e-86e1706ef457" name="impl-customers:\insert-billing-order:flow"/>
+	</flow>
+			<!-- <flow name="sfdc-mq-app:\subscribe-insert-orderitems:flow" doc:id="f18b3d11-c5a1-421b-b49a-a2eccc1959e8">
+		<anypoint-mq:subscriber doc:name="Order Items Insert Subscriber" doc:id="ecdac876-94cb-46a2-bc2b-fe16553219ce" config-ref="sonak-sfdc-amq" destination="${order.items.sfdc.insert.queue.name}" acknowledgementTimeout="${secure::mq.ack.timeout}">
+			<reconnect frequency="${secure::mq.reconnection.frequency}" count="${secure::mq.reconnection.attempts}" />
+			<anypoint-mq:subscriber-type >
+				<anypoint-mq:prefetch maxLocalMessages="${secure::mq.max.local.message}" />
+			</anypoint-mq:subscriber-type>
+		</anypoint-mq:subscriber>
+		<flow-ref doc:name="impl-common:\initialize-common-variables" doc:id="e550df42-2dec-4fc8-8da6-d5891a0bac66" name="impl-common:\initialize-common-variables"/>
+		<flow-ref doc:name="impl-customers:\upsert-customer-account:flow" doc:id="4a5e3386-9ede-42ce-a730-ad3ce40e1420" name="impl-customers:\insert-customer-order-items:flow"/>
+	</flow>
+ -->
+
+</mule>
